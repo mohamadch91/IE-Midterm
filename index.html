@@ -1,52 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Git hub stats</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css" />
     <script src="./scripts/app.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        <h1>Git hub stats</h1>
-        <p>Here you can see the stats of your git hub account</p>
-        <!-- 
+      <h1>Git hub stats</h1>
+      <p>Here you can see the stats of your git hub account</p>
+      <!-- 
             section for the form getting the username
          -->
-    <section>
+      <section>
         <div>
-        <form action="stats.php" method="post">
+          <form action="stats.php" method="post">
             <label for="username">Enter your username</label>
-            <input type="text" name="username" id="username">
-            <input type="submit" value="Submit">
-        </form>
+            <input type="text" name="username" id="username" />
+            <input type="submit" value="Submit" />
+          </form>
         </div>
-    </section>
-    <!-- 
+      </section>
+      <!-- 
         section for showing the stats includes the username,image,bio,full name,location,company,website,public repos,public gists,followers,following
      -->
-    <section>
+      <section>
         <div>
-            <h1>Username: </h1>
-            <img src="./assets/images/profile.png" alt="profile picture">
-            <p>Bio: </p>
-            <p>Full name: </p>
-            <p>Location: </p>
-            <p>Company: </p>
-            <p>Website: </p>
-            <p>Public repos: </p>
-            <p>Public gists: </p>
-            <!-- most used languages -->
-            <p>Most used languages: </p>
-            <p>Followers: </p>
-            <p>Following: </p>
+          <h1>Username:</h1>
+          <img src="./assets/images/profile.png" alt="profile picture" />
+          <p>Bio:</p>
+          <p>Full name:</p>
+          <p>Location:</p>
+          <p>Company:</p>
+          <p>Website:</p>
+          <p>Public repos:</p>
+          <p>Public gists:</p>
+          <!-- most used languages -->
+          <p>Most used languages:</p>
+          <p>Followers:</p>
+          <p>Following:</p>
         </div>
-
-    </section>
-
+      </section>
     </div>
-    
-</body>
+  </body>
 </html>
