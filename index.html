@@ -23,8 +23,8 @@
          -->
       <div id="cards">
         <section class="card">
-          <div>
-            <form onsubmit="onSumbmit()">
+          <div id="submit">
+            <form  id="submit" onsubmit="onSumbmit()">
               <label for="username">Enter your username</label>
               <input type="text" name="username" id="username" />
               <input type="submit" value="Submit" />
@@ -36,9 +36,10 @@
         <!-- 
         section for showing the stats includes the username,image,bio,full name,location,company,website,public repos,public gists,followers,following
      -->
-     <!-- <div class="loader"></div> -->
         <section class="card">
-          <div>
+         <div class="loader"></div>
+
+          <div id="info">
             <h1>Username:</h1>
             <img src="./images/profile.png" alt="profile picture" />
             <p>Bio:</p>
