@@ -5,7 +5,7 @@ import {
   clearLocalStorage,
   hasKey,
 } from "./storageManager.js";
-import { getUserData, getUserRepos, mostUsedLanguages } from "./fetchData.js";
+import {  fetchData} from "./fetchData.js";
 /**
  * @param  {string} username
  * @returns {JSON} user data
@@ -24,15 +24,11 @@ const getData = (username) => {
         return data;
     }
     // get the user data from github api
-    const data = getUserData(username);
-    // get the user repos from github api
-    const repos = getUserRepos(username);
-    // get the most used languages
-    const mostUsed = mostUsedLanguages(repos);
+    const data=fetchData(username);
     // set the user data to local storage
-    setLocalStorage(username, { data, repos, mostUsed });
+    setLocalStorage(username, data);
     // return the user data
-    return { data, repos, mostUsed };
+    return data;
 };
 /**
  * @returns {void}
