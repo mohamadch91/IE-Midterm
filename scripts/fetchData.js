@@ -1,11 +1,22 @@
+/**
+ * @param  {string} username github username
+ * @returns {JSON} user data  and the most used language
+ * @description get the user data from github api
+ * @example fetchData('username')
+ * 
+ * 
+ */
 const fetchData = async (username) => {
+    // get the user data from github api
   const user_data = await fetch(`https://api.github.com/users/${username}`)
+    // get the user repos from github api
   const user_repo = await fetch(`https://api.github.com/users/${username}/repos?per_page=5&sort=pushed`)
+    // convert the user data to json
     const user_repos = await user_repo.json();
     const u_data = await user_data.json();
 
     
-  // find the most used languages
+  // get the most used language from the user repos API
   const langs = [];
   for (let i = 0; i < user_repos.length; i++) {
     const element = user_repos[i];
@@ -17,6 +28,7 @@ const fetchData = async (username) => {
   }
   let max = 0;
   let max_lang = "";
+//   find the most used language
   for (let j = 0; j < langs.length; j++) {
     const element = langs[j];
     for (const key in element) {
@@ -30,7 +42,7 @@ const fetchData = async (username) => {
     }
   }
   const most_used_lang = max_lang;
-  return { u_data, user_repos, most_used_lang };
+  return { u_data, most_used_lang };
 };
 
 export { fetchData };
