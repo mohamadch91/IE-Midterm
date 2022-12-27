@@ -64,13 +64,18 @@ and submit form card
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     position: relative;
 }
-
+/*
+loader class for the loader
+*/
 .loader {
  border: 0 solid transparent;
  border-radius: 50%;
  width: 100px;
  height: 100px;
 }
+/*
+loader::before and loader::after are the two circles that make the loader
+*/
 
 .loader::before,
 .loader::after {
@@ -83,10 +88,16 @@ and submit form card
  animation: loader 2s linear infinite;
  opacity: 0;
 }
-
+/*
+loader::before is the first circle
+*/
 .loader::before {
  animation-delay: 1s;
 }
+/**
+    * @keyframes loader
+    * @description animation for the loader
+        */
 
 @keyframes loader {
  0% {
