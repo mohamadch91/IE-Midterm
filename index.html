@@ -24,36 +24,49 @@
       <div id="cards">
         <section class="card">
           <div id="submit">
-            <form  id="submit" onsubmit="onSubmit()">
+            <form id="submit" onsubmit="onSubmit()">
               <h2>Enter username to find Github stats</h2>
               <!-- <label for="username">Enter your username</label> -->
               <input type="text" name="username" id="username" />
-              <button type="submit"  id="submit-btn" >Submit</button>
+              <button type="submit" id="submit-btn">Submit</button>
             </form>
           </div>
         </section>
-       
-      
+
         <!-- 
         section for showing the stats includes the username,image,bio,full name,location,company,website,public repos,public gists,followers,following
      -->
         <section class="card">
-         <div class="loader"></div>
+          <div class="loader"></div>
 
           <div id="info">
-            <h1>Username:</h1>
-            <img src="./images/profile.png" alt="profile picture" />
-            <p>Bio:</p>
-            <p>Full name:</p>
-            <p>Location:</p>
-            <p>Company:</p>
-            <p>Website:</p>
-            <p>Public repos:</p>
-            <p>Public gists:</p>
-            <!-- most used languages -->
-            <p>Most used languages:</p>
-            <p>Followers:</p>
-            <p>Following:</p>
+            <div class="row">
+              <div>
+                <img src="./images/profile.png" alt="profile picture" />
+              </div>
+              <div>
+                <h1>Username:</h1>
+
+                <p>Full name:</p>
+                <p>Location:</p>
+                <p>Company:</p>
+                <p>Website:</p>
+
+                <p>Followers:</p>
+                <p>Following:</p>
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <p>Bio:</p>
+              </div>
+              <div>
+                <p>Public repos:</p>
+                <p>Public gists:</p>
+                <!-- most used languages -->
+                <p>Most used languages:</p>
+              </div>
+            </div>
           </div>
         </section>
       </div>
