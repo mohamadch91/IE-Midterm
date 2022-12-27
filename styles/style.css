@@ -55,15 +55,20 @@ in this case the card is the div that contains the user info
 and submit form card
 */
 .card{
-    /* width: 30%; */
     height: 100%;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
+    background: rgba(170, 170, 170, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.8px);
+    -webkit-backdrop-filter: blur(4.8px);
+    border: 1px solid rgba(170, 170, 170, 0.42);
+    border: 1px solid rgba(44, 38, 67, 0.42);
     margin: 1%;
     padding: 1%;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     position: relative;
-}
+ }
+
 /*
 loader class for the loader
 */
