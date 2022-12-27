@@ -1,54 +1,52 @@
-/**
- * @param  {string} username github username
- * @returns {JSON} user data
- * @description get the user data from github api
- * @example getUserData('username')
- * 
- */
-const getUserData = async (username) => {
-    const response = await fetch(`https://api.github.com/users/${username}`);
-    const data = await response.json();
-    return data;
-}
-
-/**
- * @param  {string} username github username
- * @returns {JSON} user repos
- * @description get the user 5 last pushed repos from github api
- * @example getUserRepos('username')
- * 
- */
-const getUserRepos = async (username) => {
-    const response = await fetch(`https://api.github.com/users/${username}/repos?sort=pushed&per_page=5`);
-    const data = await response.json();
-    return data;
-}
 
 
-
-/**
- * @param  {JSON} repos user repos
- * @returns {JSON} most used languages
- * @description get the most used languages
- * @example mostUsedLanguages(repos)
- * 
- * 
- */
-const mostUsedLanguages = (repos) => {
-    const languages = repos.reduce((total, item) => {
-        const {language, stargazers_count} = item;
-        if (!language) return total;
-        if (!total[language]) {
-            total[language] = {label: language, value: 1, stars: stargazers_count};
-        } else {
-            total[language] = {...total[language], value: total[language].value + 1, stars: total[language].stars + stargazers_count};
+const fetchData = (username)=>{
+    const user_data = fetch(`https://api.github.com/users/${username}`)
+    .then((response)=>response.json())
+    .then((data)=>{
+        return data;
+    }
+    )
+    .catch((error)=>{
+        console.log(error);
+    }
+    )
+    const user_repos = fetch(`https://api.github.com/users/${username}/repos`)
+    .then((response)=>response.json())
+    .then((data)=>{
+        return data;
+    }
+    )
+    .catch((error)=>{
+        console.log(error);
+    }
+    )
+    // find the most used languages
+    const langs=[]
+    for (let i = 0; i < user_repos.length; i++) {
+        const element = user_repos[i];
+        const langues= fetch(element.language_url).then((response)=>response.json())
+        .then((data)=>{
+            return data;
+            langs.push(data);
         }
-        return total;
-    }, {});
-    const mostUsed = Object.values(languages).sort((a, b) => {
-        return b.value - a.value;
-    }).slice(0, 5);
-    return mostUsed;
+        )
+    }
+    let max=0
+    let max_lang=""
+    for (let j =0; j<langs.length; j++){
+        const element = langs[j];
+        // iterate each ket in langs[j]
+        for (const key in element) {
+            if (element.hasOwnProperty(key)) {
+                const value = element[key];
+                if (value>max){
+                    max=value;
+                    max_lang=key;
+                }
+            }
+        }
+    }
+    const most_used_lang = max_lang;
+    return {user_data, user_repos, most_used_lang}
 }
-
-export {getUserData, getUserRepos, mostUsedLanguages};
