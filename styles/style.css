@@ -3,53 +3,51 @@ body for the whole page
 */
 
 body {
-    width: 100%;
-    height: 100%;
-    background: url("../images/background.png") ;
-    background-position: 18rem 0;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    color: rgb(212, 205, 205);
-    line-height: 1.5;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    
+  width: 100%;
+  height: 100%;
+  background: url("../images/background.png");
+  background-position: 18rem 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: rgb(212, 205, 205);
+  line-height: 1.5;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 /*
 container for the whole page
 */
 .container {
-    margin:  2vh;
-    padding: 2vh;
-    position: relative;
+  margin: 2vh;
+  padding: 2vh;
+  position: relative;
 }
 
 /*
 header for the top of the page
 */
 #header {
-    width: 100%;
-    height: 100px;
-    position: relative;
-    font-size: 20px;
-    margin-bottom: 2%;
-    text-align: center;
-
+  width: 100%;
+  height: 100px;
+  position: relative;
+  font-size: 20px;
+  margin-bottom: 2%;
+  text-align: center;
 }
 
 /*
 cards for the main content of the page
 */
 
-#cards{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 auto;
-    width: 95%;
-    height: 80%;
-    flex-direction: row-reverse;
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 95%;
+  height: 80%;
+  flex-direction: row-reverse;
 }
 
 /* 
@@ -57,31 +55,31 @@ card class for cards in the main content of the page
 in this case the card is the div that contains the user info
 and submit form card
 */
-.card{
-    height: 100%;
-    background: rgba(170, 170, 170, 0.3);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4.8px);
-    -webkit-backdrop-filter: blur(4.8px);
-    border: 1px solid rgba(170, 170, 170, 0.42);
-    border: 1px solid rgba(44, 38, 67, 0.42);
-    margin: 1%;
-    margin-top: 2%;
-    padding: 1%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    position: relative;
- }
+.card {
+  height: 100%;
+  background: rgba(170, 170, 170, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.8px);
+  -webkit-backdrop-filter: blur(4.8px);
+  border: 1px solid rgba(170, 170, 170, 0.42);
+  border: 1px solid rgba(44, 38, 67, 0.42);
+  margin: 1%;
+  margin-top: 2%;
+  padding: 1%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
 
 /*
 loader class for the loader
 */
 .loader {
- border: 0 solid transparent;
- border-radius: 50%;
- width: 100px;
- height: 100px;
- display: none;
+  border: 0 solid transparent;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: none;
 }
 /*
 loader::before and loader::after are the two circles that make the loader
@@ -89,20 +87,20 @@ loader::before and loader::after are the two circles that make the loader
 
 .loader::before,
 .loader::after {
- content: '';
- border: 7px solid #ccc;
- border-radius: 50%;
- width: inherit;
- height: inherit;
- position: absolute;
- animation: loader 2s linear infinite;
- opacity: 0;
+  content: "";
+  border: 7px solid #ccc;
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  animation: loader 2s linear infinite;
+  opacity: 0;
 }
 /*
 loader::before is the first circle
 */
 .loader::before {
- animation-delay: 1s;
+  animation-delay: 1s;
 }
 /**
     * @keyframes loader
@@ -110,44 +108,74 @@ loader::before is the first circle
         */
 
 @keyframes loader {
- 0% {
-  transform: scale(1);
-  opacity: 0;
- }
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
 
- 50% {
-  opacity: 1;
- }
+  50% {
+    opacity: 1;
+  }
 
- 100% {
-  transform: scale(0);
-  opacity: 0;
- }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
 }
 /* 
 submit div for the submit form
 */
-#submit{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    min-height: 60vh;
-    min-width: 20vw;
+#submit {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 60vh;
+  min-width: 20vw;
 }
 /* 
 information card dicv style
 */
 #info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    max-height: 60vh;
-    min-width: 37vw;
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: center;
+    align-items: center; */
+  /* width: 100%; */
+  /* height: 100%; */
+  max-height: 60vh;
+  min-width: 37vw;
+}
+/*
+username input style
+*/
+#username {
+  border-radius: 5px;
+  background: linear-gradient(145deg, #002344, #001e3a);
+  color: #ccc;
+  border: 1px solid #ccc;
+  width: 80%;
+  height: 40px;
+  padding: 0 10px;
+  margin: 10px 0;
+  font-size: 16px;
+}
+/*
+submit button style
+*/
+#submit-btn {
+  border-radius: 5px;
+  background: linear-gradient(145deg, #55a2ea, #4788c5);
+  box-shadow: 47px 47px 23px #2f5981, -47px -47px 23px #6fd5ff;
+  color: #002140;
+  border: 1px solid #002140;
+  width: 80%;
+  height: 40px;
+  padding: 0 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
 }
