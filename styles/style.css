@@ -77,9 +77,13 @@ loader id for the loader
 #loader {
   border: 0 solid transparent;
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  /* display: none; */
+  display: none;
+  width: 10rem;
+  height: 10rem;
+  padding-left: 40%;
+  padding-top: 20%;
+  min-height: 42vh;
+  min-width: 47vw;
 }
 /*
 loader::before and loader::after are the two circles that make the loader
