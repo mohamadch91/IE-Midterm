@@ -19,12 +19,14 @@ const getData = async (username) => {
     // check if the user data exists in local storage
     if (hasKey(username)) {
         // get the user data from local storage
+        console.log('from local storage')
         const data = getLocalStorage(username);
         // return the user data
         return data;
     }
     // get the user data from github api
-    const data=await fetchData(username);
+    console.log('from github api')
+    const data= await fetchData(username);
     console.log(data)
     // set the user data to local storage
     setLocalStorage(username, data);
