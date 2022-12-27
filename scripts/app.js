@@ -34,7 +34,7 @@ const changeSrc = (id, src) => {
 
 const changePage = (user, most_used_lang) => {
   changeContent("most", most_used_lang);
-  changeSrc(src, `https://skillicons.dev/icons?i=${icon_dic[most_used_lang]}`);
+  changeSrc("most_img", `https://skillicons.dev/icons?i=${icon_dic[most_used_lang]}`);
   changeSrc("avatar", user.avatar_url);
   changeContent("fullname", user.name);
   changeContent("uname", user.login);
