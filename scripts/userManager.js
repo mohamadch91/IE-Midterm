@@ -19,14 +19,12 @@ const getData = (username) => {
     // check if the user data exists in local storage
     if (hasKey(username)) {
         // get the user data from local storage
-        console.log('from local storage');
         const data = getLocalStorage(username);
         // return the user data
         return data;
     }
     // get the user data from github api
     const data = getUserData(username);
-    console.log(data);
     // get the user repos from github api
     const repos = getUserRepos(username);
     // get the most used languages
@@ -34,7 +32,6 @@ const getData = (username) => {
     // set the user data to local storage
     setLocalStorage(username, { data, repos, mostUsed });
     // return the user data
-    console.log({ data, repos, mostUsed });
     return { data, repos, mostUsed };
 };
 /**

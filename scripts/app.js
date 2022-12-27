@@ -9,5 +9,5 @@ const onSubmit = (e) => {
     // do something with user
 }
 
-// window.onload =clearData;
+window.onload =clearData;
 document.getElementById('form').addEventListener('submit', onSubmit);

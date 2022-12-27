@@ -7,7 +7,7 @@
  */
 const getUserData = async (username) => {
     const response = await fetch(`https://api.github.com/users/${username}`);
-    const data =  response.json();
+    const data = await response.json();
     return data;
 }
 
@@ -20,7 +20,7 @@ const getUserData = async (username) => {
  */
 const getUserRepos = async (username) => {
     const response = await fetch(`https://api.github.com/users/${username}/repos?sort=pushed&per_page=5`);
-    const data =  response.json();
+    const data = await response.json();
     return data;
 }
 
