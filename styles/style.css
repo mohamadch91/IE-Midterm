@@ -150,6 +150,7 @@ information card dicv style
   min-height: 60vh;
   min-width: 47vw;
   max-width: 47vw;
+  font-size: 20px;
 }
 /*
 username input style
@@ -194,7 +195,7 @@ row class for the row in the information card
   margin: 0;
   padding: 0;
   margin-bottom: 1%;
-  font-size: medium;
+  font-size: large;
 }
 /*
 profile image style
@@ -219,6 +220,7 @@ profile image style
   margin: 0 auto;
   text-align: center;
   border-radius: 5px;
+  font-size: 16px;
   display: none;
 }
 

@@ -24,9 +24,17 @@ const icon_dic = {
   Perl: "perl",
   Lua: "lua",
 };
+
+const styledAlert = (msg,color) => {
+    document.getElementById("alert").style.display = "block";
+    document.getElementById("alert").style.backgroundColor = color;
+
+    document.getElementById("alert-text").innerHTML = msg;
+}
 const changeContent = (id, content) => {
   document.getElementById(id).append(" " + content);
 };
+
 
 const changeSrc = (id, src) => {
   document.getElementById(id).setAttribute("src", src);
