@@ -25,6 +25,7 @@ const getData = (username) => {
     }
     // get the user data from github api
     const data = getUserData(username);
+    console.log(data);
     // get the user repos from github api
     const repos = getUserRepos(username);
     // get the most used languages
@@ -32,6 +33,7 @@ const getData = (username) => {
     // set the user data to local storage
     setLocalStorage(username, { data, repos, mostUsed });
     // return the user data
+    console.log({ data, repos, mostUsed });
     return { data, repos, mostUsed };
 };
 /**

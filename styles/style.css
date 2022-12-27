@@ -125,7 +125,7 @@ loader::before is the first circle
 /* 
 submit div for the submit form
 */
-#submit {
+.submit {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -190,4 +190,17 @@ row class for the row in the information card
   margin: 0;
   padding: 0;
   margin-bottom: 1%;
+  font-size: medium;
+}
+/*
+profile image style
+*/
+#profile {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1%;
+  margin-top: 1%;
 }

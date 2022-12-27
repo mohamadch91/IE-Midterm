@@ -7,7 +7,12 @@
     <title>Git hub stats</title>
     <link rel="icon" href="./images/profile.png" type="image/icon type" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <script src="./scripts/app.js"></script>
+    <script src="./scripts/app.js" type="module"></script>
+    <script src="./scripts/fetchData.js" type="module"></script>
+    <script src="./scripts/storageManager.js" type="module"></script>
+    <script src="./scripts/userManager.js" type="module"></script>
+
+
   </head>
   <body>
     <div class="container">
@@ -23,12 +28,12 @@
          -->
       <div id="cards">
         <section class="card">
-          <div id="submit">
-            <form id="submit" onsubmit="onSubmit()">
+          <div class="submit">
+            <form class="submit" id="form" >
               <h2>Enter username to find Github stats</h2>
               <!-- <label for="username">Enter your username</label> -->
               <input type="text" name="username" id="username" />
-              <button type="submit" id="submit-btn">Submit</button>
+              <input value="Submit" type="submit" id="submit-btn">
             </form>
           </div>
         </section>
@@ -41,8 +46,8 @@
 
           <div id="info">
             <div class="row">
-              <div>
-                <img src="./images/profile.png" alt="profile picture" />
+              <div id="profile">
+                <img src="./images/profile.png" alt="profile picture" id="profile"  />
               </div>
               <div>
                 <h1>Username:</h1>
