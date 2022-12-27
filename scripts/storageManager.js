@@ -18,16 +18,7 @@ const setLocalStorage = (key, value) => {
 const getLocalStorage = (key) => {
     return JSON.parse(localStorage.getItem(key));
 }
-/**
- * @param  {string} key github username
- * @returns {void}
- * @description remove the user data from local storage
- * @example removeLocalStorage('username')
- * 
- */
-const removeLocalStorage = (key) => {
-    localStorage.removeItem(key);
-}
+
 /**
  * @returns {void}
  * @description clear all the data from local storage
@@ -48,4 +39,4 @@ const hasKey = (key) => {
     return localStorage.hasOwnProperty(key);
 }
 
-export {setLocalStorage, getLocalStorage, removeLocalStorage, clearLocalStorage, hasKey};
+export {setLocalStorage, getLocalStorage, clearLocalStorage, hasKey};
