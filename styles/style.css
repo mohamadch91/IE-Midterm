@@ -72,21 +72,21 @@ and submit form card
 }
 
 /*
-loader class for the loader
+loader id for the loader
 */
-.loader {
+#loader {
   border: 0 solid transparent;
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  display: none;
+  /* display: none; */
 }
 /*
 loader::before and loader::after are the two circles that make the loader
 */
 
-.loader::before,
-.loader::after {
+#loader::before,
+#loader::after {
   content: "";
   border: 7px solid #ccc;
   border-radius: 50%;
@@ -99,7 +99,7 @@ loader::before and loader::after are the two circles that make the loader
 /*
 loader::before is the first circle
 */
-.loader::before {
+#loader::before {
   animation-delay: 1s;
 }
 /**
