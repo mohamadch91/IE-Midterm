@@ -36,10 +36,14 @@ const icon_dic = {
   Shell: "powershell",
   TeX: "tex",
   PowerShell: "powershell",
-  Elixir: "elixir",
   Node: "nodejs",
     "Visual Basic": "visualbasic",
     Nodejs: "nodejs",
+    "HTML5": "html",
+    "HTML": "html",
+    "CSS": "css",
+    "CSS3": "css",
+    
 };
 /**
  * @param  {string} msg message to be displayed
@@ -69,6 +73,24 @@ export const styledAlert = (msg, color) => {
 const changeContent = (id, content) => {
   document.getElementById(id).append(" " + content);
 };
+/**
+ * @param  {string} id id of the element
+ * @param  {string} href href of the link
+ * @returns {void}
+ * @description change the href of the link with the id
+ * @example changeHref('most_link', 'https://skillicons.dev/icons?i=c-plusplus')
+ * 
+ */
+const changeHref = (id, href) => {
+    document.getElementById(id).setAttribute("href", href);
+}
+
+
+
+
+
+
+
 /**
  * @param  {string} id id of the element
  * @param  {string} content reset the content of the element with the id
@@ -114,6 +136,7 @@ const changePage = (user, most_used_lang) => {
   changeContent("location", user.location);
   changeContent("company", user.company);
   changeContent("blog", user.blog);
+    changeHref("blog", user.blog);
 };
 /**
  * @returns {void}
@@ -132,7 +155,8 @@ const resetPage = () => {
   resetContent("following", "Following: ");
   resetContent("location", "Location: ");
   resetContent("company", "Company: ");
-  resetContent("blog", "Blog: ");
+  resetContent("blog", "");
+    changeHref("blog", "");
 };
 /**
  * @param  {Event} e submit event
@@ -173,6 +197,13 @@ const onSubmit = async (e) => {
   } else {
     // check if null or undefined or empty string
     for (const key in user_data) {
+        if(key == "followers" || key == "following"){
+            if(user_data[key] == null || user_data[key] == undefined || user_data[key] == ""){
+                user_data[key] = 0;
+                continue;
+            }
+
+        }
       if (
         user_data[key] == null ||
         user_data[key] == undefined ||
