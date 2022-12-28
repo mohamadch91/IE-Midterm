@@ -25,16 +25,15 @@ const icon_dic = {
   Lua: "lua",
 };
 
-export const styledAlert = (msg,color) => {
-    document.getElementById("alert").style.display = "block";
-    document.getElementById("alert").style.backgroundColor = color;
+export const styledAlert = (msg, color) => {
+  document.getElementById("alert").style.display = "block";
+  document.getElementById("alert").style.backgroundColor = color;
 
-    document.getElementById("alert-text").innerHTML = msg;
-}
+  document.getElementById("alert-text").innerHTML = msg;
+};
 const changeContent = (id, content) => {
   document.getElementById(id).append(" " + content);
 };
-
 
 const changeSrc = (id, src) => {
   document.getElementById(id).setAttribute("src", src);
@@ -42,7 +41,10 @@ const changeSrc = (id, src) => {
 
 const changePage = (user, most_used_lang) => {
   changeContent("most", most_used_lang);
-  changeSrc("most_img", `https://skillicons.dev/icons?i=${icon_dic[most_used_lang]}`);
+  changeSrc(
+    "most_img",
+    `https://skillicons.dev/icons?i=${icon_dic[most_used_lang]}`
+  );
   changeSrc("avatar", user.avatar_url);
   changeContent("fullname", user.name);
   changeContent("uname", user.login);
@@ -64,16 +66,15 @@ const onSubmit = async (e) => {
   const user = await getData(username);
   const most_used_lang = user.most_used_lang;
   const user_data = user.u_data;
-    if (user_data.message == "Not Found") {
-        styledAlert("User not found","red");
-        loader.style.display = "none";
-        info.style.display = "block";
-        return false;
-    }
-
-  changePage(user_data, most_used_lang);
-
-  console.log(user);
+  if (user_data === undefined) {
+    styledAlert("Network error", "red");
+  } else if (user_data.message == "API rate limit exceeded for") {
+    styledAlert("API rate limit exceeded", "red");
+  } else if (user_data.message == "Not Found") {
+    styledAlert("User not found", "red");
+  } else {
+    changePage(user_data, most_used_lang);
+  }
   loader.style.display = "none";
   info.style.display = "block";
   return false;
