@@ -16,18 +16,24 @@ const fetchData = async (username) => {
     console.log(err);
   });
     // convert the user data to json
-    const user_repos = await user_repo.json();
-    const u_data = await user_data.json();
+    const user_repos = await user_repo?.json().catch((err) => {
+      console.log(err);
+    });
+    const u_data = await user_data?.json().catch((err) => {
+      console.log(err);
+    });
 
     
   // get the most used language from the user repos API
   const langs = [];
-  for (let i = 0; i < user_repos.length; i++) {
+  for (let i = 0; i < user_repos?.length; i++) {
     const element = user_repos[i];
-    const langues = await fetch(element.languages_url).catch((err) => {
+    const langues = await fetch(element?.languages_url).catch((err) => {
       console.log(err);
     });
-    const lang = await langues.json();
+    const lang = await langues?.json().catch((err) => {
+      console.log(err);
+    });
     langs.push(lang);
 
       

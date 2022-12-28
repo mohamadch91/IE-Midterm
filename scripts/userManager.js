@@ -27,8 +27,11 @@ const getData = async (username) => {
     // get the user data from github api
     console.log('from github api')
     const data= await fetchData(username);
+    
     // set the user data to local storage
+    if(data.u_data !== undefined){
     setLocalStorage(username, data);
+    }
     // return the user data
     return data;
 };

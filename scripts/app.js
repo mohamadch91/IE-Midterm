@@ -58,6 +58,10 @@ const changePage = (user, most_used_lang) => {
 
 const onSubmit = async (e) => {
   e.preventDefault();
+  if (window.navigator.onLine === false) {
+    styledAlert("No internet connection", "red");
+    return false;
+    }
   const loader = document.getElementById("loader");
   loader.style.display = "block";
   const info = document.getElementById("info");
@@ -66,6 +70,7 @@ const onSubmit = async (e) => {
   const user = await getData(username);
   const most_used_lang = user.most_used_lang;
   const user_data = user.u_data;
+  console.log(user)
   if (user_data === undefined) {
     styledAlert("Network error", "red");
   } else if (user_data.message == "API rate limit exceeded for") {
@@ -81,5 +86,5 @@ const onSubmit = async (e) => {
   // do something with user
 };
 
-// window.onload =clearData;
+window.onload =clearData;
 document.getElementById("form").addEventListener("submit", onSubmit);
