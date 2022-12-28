@@ -8,9 +8,6 @@
     <link rel="icon" href="./images/profile.png" type="image/icon type" />
     <link rel="stylesheet" href="./styles/style.css" />
     <script src="./scripts/app.js" type="module"></script>
-   
-
-
   </head>
   <body>
     <div class="container">
@@ -27,13 +24,12 @@
       <div id="cards">
         <section class="card">
           <div class="submit">
-            <form class="submit" id="form" >
+            <form class="submit" id="form">
               <h2>Enter username to find Github stats</h2>
-              
 
               <!-- <label for="username">Enter your username</label> -->
               <input type="text" name="username" id="username" />
-              <input value="Search" type="submit" id="submit-btn">
+              <input value="Search" type="submit" id="submit-btn" />
             </form>
           </div>
         </section>
@@ -46,8 +42,12 @@
 
           <div id="info">
             <div class="row">
-              <div >
-                <img src="./images/profile.png" alt="profile picture" id="avatar"  />
+              <div>
+                <img
+                  src="./images/profile.png"
+                  alt="profile picture"
+                  id="avatar"
+                />
               </div>
               <div id="raw-data">
                 <h1 id="uname">Username:</h1>
@@ -55,11 +55,10 @@
                 <p id="fullname">Full name:</p>
                 <p id="location">Location:</p>
                 <p id="company">Company:</p>
-                <p >Blog:
-                  <a id="blog"></a></p>
+                <p>Blog: <a id="blog"></a></p>
 
-                <p id ="followers">Followers:</p>
-                <p id ="following">Following:</p>
+                <p id="followers">Followers:</p>
+                <p id="following">Following:</p>
               </div>
             </div>
             <div class="row">
@@ -69,17 +68,20 @@
               <div>
                 <!-- most used languages -->
                 <p id="most">Most used languages:</p>
-                  <img src="" id="most_img" alt="" />
+                <img src="" id="most_img" alt="" />
               </div>
             </div>
           </div>
         </section>
-       
       </div>
-       <div id="alert">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-  <strong id="alert-text"></strong>
-</div>
+      <div id="alert">
+        <span
+          class="closebtn"
+          onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+        <strong id="alert-text"></strong>
+      </div>
     </div>
   </body>
 </html>

@@ -37,13 +37,12 @@ const icon_dic = {
   TeX: "tex",
   PowerShell: "powershell",
   Node: "nodejs",
-    "Visual Basic": "visualbasic",
-    Nodejs: "nodejs",
-    "HTML5": "html",
-    "HTML": "html",
-    "CSS": "css",
-    "CSS3": "css",
-
+  "Visual Basic": "visualbasic",
+  Nodejs: "nodejs",
+  HTML5: "html",
+  HTML: "html",
+  CSS: "css",
+  CSS3: "css",
 };
 /**
  * @param  {string} msg message to be displayed
@@ -79,17 +78,11 @@ const changeContent = (id, content) => {
  * @returns {void}
  * @description change the href of the link with the id
  * @example changeHref('most_link', 'https://skillicons.dev/icons?i=c-plusplus')
- * 
+ *
  */
 const changeHref = (id, href) => {
-    document.getElementById(id).setAttribute("href", href);
-}
-
-
-
-
-
-
+  document.getElementById(id).setAttribute("href", href);
+};
 
 /**
  * @param  {string} id id of the element
@@ -136,12 +129,11 @@ const changePage = (user, most_used_lang) => {
   changeContent("location", user.location);
   changeContent("company", user.company);
   changeContent("blog", user.blog);
-    if(user.blog == "Not available"){
-        changeHref("blog", "");
-    }
-    else{
+  if (user.blog == "Not available") {
+    changeHref("blog", "");
+  } else {
     changeHref("blog", user.blog);
-    }
+  }
 };
 /**
  * @returns {void}
@@ -161,7 +153,7 @@ const resetPage = () => {
   resetContent("location", "Location: ");
   resetContent("company", "Company: ");
   resetContent("blog", "");
-    changeHref("blog", "");
+  changeHref("blog", "");
 };
 /**
  * @param  {Event} e submit event
@@ -200,18 +192,25 @@ const onSubmit = async (e) => {
   } else if (user_data.message == "Not Found") {
     styledAlert("User not found", "red");
   } else {
-    if (most_used_lang == null || most_used_lang == undefined || most_used_lang == "") {
-        most_used_lang = "Not available";
+    if (
+      most_used_lang == null ||
+      most_used_lang == undefined ||
+      most_used_lang == ""
+    ) {
+      most_used_lang = "Not available";
     }
     // check if null or undefined or empty string
     for (const key in user_data) {
-        if(key == "followers" || key == "following"){
-            if(user_data[key] == null || user_data[key] == undefined || user_data[key] == ""){
-                user_data[key] = 0;
-                continue;
-            }
-
+      if (key == "followers" || key == "following") {
+        if (
+          user_data[key] == null ||
+          user_data[key] == undefined ||
+          user_data[key] == ""
+        ) {
+          user_data[key] = 0;
+          continue;
         }
+      }
       if (
         user_data[key] == null ||
         user_data[key] == undefined ||
