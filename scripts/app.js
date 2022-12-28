@@ -39,7 +39,9 @@ export const styledAlert = (msg, color) => {
 const changeContent = (id, content) => {
   document.getElementById(id).append(" " + content);
 };
-
+const resetContent = (id,content) => {
+    document.getElementById(id).innerHTML = content;
+};
 const changeSrc = (id, src) => {
   document.getElementById(id).setAttribute("src", src);
 };
@@ -60,9 +62,22 @@ const changePage = (user, most_used_lang) => {
   changeContent("company", user.company);
   changeContent("blog", user.blog);
 };
-
+const resetPage = () => {
+    resetContent("most", "Most used language: ");
+    changeSrc("most_img", "");
+    changeSrc("avatar", "./images/profile.png");
+    resetContent("fullname", "Full name: ");
+    resetContent("uname", "Username: ");
+    resetContent("bio", "Bio: ");
+    resetContent("followers", "Followers: ");
+    resetContent("following", "Following: ");
+    resetContent("location", "Location: ");
+    resetContent("company", "Company: ");
+    resetContent("blog", "Blog: ");
+};
 const onSubmit = async (e) => {
   e.preventDefault();
+  resetPage();
   if (window.navigator.onLine === false) {
     styledAlert("No internet connection", "red");
     return false;
