@@ -240,7 +240,19 @@ profile image style
 .closebtn:hover {
   color: black;
 }
-
+/*
+bio div style
+*/
 #bio-div {
   width:50%;
+}
+/*
+raw data div style
+*/
+#raw-data {
+  width: 40%;
+  height: 100%;
+  line-height: 1.5;
+  margin-bottom: 1%;
+  margin-top: 1%;
 }
