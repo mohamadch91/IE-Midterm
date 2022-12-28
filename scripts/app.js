@@ -25,7 +25,7 @@ const icon_dic = {
   Lua: "lua",
 };
 
-const styledAlert = (msg,color) => {
+export const styledAlert = (msg,color) => {
     document.getElementById("alert").style.display = "block";
     document.getElementById("alert").style.backgroundColor = color;
 
@@ -64,6 +64,13 @@ const onSubmit = async (e) => {
   const user = await getData(username);
   const most_used_lang = user.most_used_lang;
   const user_data = user.u_data;
+    if (user_data.message == "Not Found") {
+        styledAlert("User not found","red");
+        loader.style.display = "none";
+        info.style.display = "block";
+        return false;
+    }
+
   changePage(user_data, most_used_lang);
 
   console.log(user);

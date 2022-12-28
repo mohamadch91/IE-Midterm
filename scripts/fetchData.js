@@ -8,9 +8,13 @@
  */
 const fetchData = async (username) => {
     // get the user data from github api
-  const user_data = await fetch(`https://api.github.com/users/${username}`)
+  const user_data = await fetch(`https://api.github.com/users/${username}`).catch((err) => {
+    console.log(err);
+  });
     // get the user repos from github api
-  const user_repo = await fetch(`https://api.github.com/users/${username}/repos?per_page=5&sort=pushed`)
+  const user_repo = await fetch(`https://api.github.com/users/${username}/repos?per_page=5&sort=pushed`).catch((err) => {
+    console.log(err);
+  });
     // convert the user data to json
     const user_repos = await user_repo.json();
     const u_data = await user_data.json();
@@ -20,7 +24,9 @@ const fetchData = async (username) => {
   const langs = [];
   for (let i = 0; i < user_repos.length; i++) {
     const element = user_repos[i];
-    const langues = await fetch(element.languages_url)
+    const langues = await fetch(element.languages_url).catch((err) => {
+      console.log(err);
+    });
     const lang = await langues.json();
     langs.push(lang);
 
