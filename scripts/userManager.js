@@ -6,6 +6,7 @@ import {
   hasKey,
 } from "./storageManager.js";
 import {  fetchData} from "./fetchData.js";
+import { styledAlert } from "./app.js";
 /**
  * @param  {string} username
  * @returns {JSON} user data
@@ -20,12 +21,13 @@ const getData = async (username) => {
     if (hasKey(username)) {
         // get the user data from local storage
         console.log('from local storage')
+        styledAlert('Data is from local storage', 'green');
         const data = getLocalStorage(username);
         // return the user data
         return data;
     }
     // get the user data from github api
-    console.log('from github api')
+    styledAlert('Data is from github api', 'green');
     const data= await fetchData(username);
     
     // set the user data to local storage

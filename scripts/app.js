@@ -30,6 +30,11 @@ export const styledAlert = (msg, color) => {
   document.getElementById("alert").style.backgroundColor = color;
 
   document.getElementById("alert-text").innerHTML = msg;
+    setTimeout(() => {
+    document.getElementById("alert").style.display = "none";
+    }, 3000);
+
+
 };
 const changeContent = (id, content) => {
   document.getElementById(id).append(" " + content);
@@ -86,5 +91,5 @@ const onSubmit = async (e) => {
   // do something with user
 };
 
-window.onload =clearData;
+// window.onload =clearData;
 document.getElementById("form").addEventListener("submit", onSubmit);
