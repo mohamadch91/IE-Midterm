@@ -168,10 +168,10 @@ const onSubmit = async (e) => {
   // reset the page
   resetPage();
   // check if the user is online
-  if (window.navigator.onLine === false) {
-    styledAlert("No internet connection", "red");
-    return false;
-  }
+  // if (window.navigator.onLine === false) {
+  //   styledAlert("No internet connection", "red");
+  //   return false;
+  // }
   // show the loader
   const loader = document.getElementById("loader");
   loader.style.display = "block";
