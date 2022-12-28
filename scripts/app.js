@@ -83,6 +83,13 @@ const onSubmit = async (e) => {
   } else if (user_data.message == "Not Found") {
     styledAlert("User not found", "red");
   } else {
+    // check if null or undefined or empty string
+    for (const key in user_data) {
+      if (user_data[key] == null || user_data[key] == undefined || user_data[key] == "") {
+        user_data[key] = "Not available";
+      }
+    }
+         
     changePage(user_data, most_used_lang);
   }
   loader.style.display = "none";
