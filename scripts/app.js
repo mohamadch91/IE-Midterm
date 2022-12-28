@@ -43,7 +43,7 @@ const icon_dic = {
     "HTML": "html",
     "CSS": "css",
     "CSS3": "css",
-    
+
 };
 /**
  * @param  {string} msg message to be displayed
@@ -136,7 +136,12 @@ const changePage = (user, most_used_lang) => {
   changeContent("location", user.location);
   changeContent("company", user.company);
   changeContent("blog", user.blog);
+    if(user.blog == "Not available"){
+        changeHref("blog", "");
+    }
+    else{
     changeHref("blog", user.blog);
+    }
 };
 /**
  * @returns {void}
@@ -185,7 +190,7 @@ const onSubmit = async (e) => {
   const username = document.getElementById("username").value;
   // get the user data from the API
   const user = await getData(username);
-  const most_used_lang = user.most_used_lang;
+  let most_used_lang = user.most_used_lang;
   const user_data = user.u_data;
   // check if the user data is null or undefined or empty string or API rate limit exceeded or user not found
   if (user_data === undefined) {
@@ -195,6 +200,9 @@ const onSubmit = async (e) => {
   } else if (user_data.message == "Not Found") {
     styledAlert("User not found", "red");
   } else {
+    if (most_used_lang == null || most_used_lang == undefined || most_used_lang == "") {
+        most_used_lang = "Not available";
+    }
     // check if null or undefined or empty string
     for (const key in user_data) {
         if(key == "followers" || key == "following"){
