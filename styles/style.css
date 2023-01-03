@@ -242,6 +242,8 @@ bio div style
 */
 #bio-div {
   width: 50%;
+  text-align: center;
+  margin-top: 1%;
 }
 /*
 bio style

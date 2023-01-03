@@ -147,7 +147,7 @@ const resetPage = () => {
   changeSrc("avatar", "./images/profile.png");
   resetContent("fullname", "Full name: ");
   resetContent("uname", "Username: ");
-  resetContent("bio", "Bio: ");
+  resetContent("bio", "");
   resetContent("followers", "Followers: ");
   resetContent("following", "Following: ");
   resetContent("location", "Location: ");
@@ -229,5 +229,5 @@ const onSubmit = async (e) => {
   return false;
 };
 
-window.onload =clearData;
+// window.onload =clearData;
 document.getElementById("form").addEventListener("submit", onSubmit);
