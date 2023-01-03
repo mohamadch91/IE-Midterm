@@ -123,7 +123,7 @@ const changePage = (user, most_used_lang) => {
   changeSrc("avatar", user.avatar_url);
   changeContent("fullname", user.name);
   changeContent("uname", user.login);
-  changeContent("bio", user.bio);
+  changeContent("bio", user.bio.trim());
   changeContent("followers", user.followers);
   changeContent("following", user.following);
   changeContent("location", user.location);
@@ -147,7 +147,7 @@ const resetPage = () => {
   changeSrc("avatar", "./images/profile.png");
   resetContent("fullname", "Full name: ");
   resetContent("uname", "Username: ");
-  resetContent("bio", "");
+  resetContent("bio", "Bio: ");
   resetContent("followers", "Followers: ");
   resetContent("following", "Following: ");
   resetContent("location", "Location: ");
@@ -229,5 +229,5 @@ const onSubmit = async (e) => {
   return false;
 };
 
-// window.onload =clearData;
+window.onload =clearData;
 document.getElementById("form").addEventListener("submit", onSubmit);
