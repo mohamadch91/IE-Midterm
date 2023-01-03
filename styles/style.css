@@ -246,6 +246,13 @@ bio div style
   width: 50%;
 }
 /*
+bio style
+*/
+#bio {
+  white-space : pre-wrap;
+   word-wrap: break-word;
+}
+/*
 raw data div style
 */
 #raw-data {
